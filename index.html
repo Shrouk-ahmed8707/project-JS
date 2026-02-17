@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/all.css">
+</head>
+<style>
+  a .link {
+    text-decoration: none;
+    color: blue;
+  }
+  .product_container {
+    margin-top: 20px;
+  
+  }
+
+  #nameofaccount {
+    /* display: none; */
+    margin-right: 20px;
+    font-weight: bold;
+  }
+
+
+  .icon {
+    font-size: 24px;
+    /* color: red; */
+    cursor: pointer;
+  }
+
+  .icon-cart i {
+    cursor: pointer;
+  }
+
+  .notification {
+    top: -10px;
+    left: 95px;
+    display: none;
+  }
+
+  .rest_icons {
+    display: none;
+  }
+
+  .product_cart {
+    display: none;
+    position: absolute;
+    width: 280px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    top: 40px;
+    right: 80px;
+    z-index: 1000;
+  }
+  .container_search {
+    margin-top: 80px;
+    /* margin-bottom: 20px; */
+  }
+  #searchMode{
+    margin-right: 20px;
+  }
+</style>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <img src="images/Gemini_Generated_Image_7cnqp77cnqp77cnq.png" style="width: 50px; height: 50px; border-radius: 10px;">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact us</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav  mb-2 mb-lg-0 ">
+          <a class="btn btn-outline-primary me-3 link" href="login.html" role="button">Login</a>
+          <a class="btn btn-primary link" href="register.html" role="button">Register</a>
+          <div class="icon-cart position-relative  rest_icons ">
+            <a class="mt-0" id="nameofaccount" href="#" role="button"></a> <!-- المفروض يودينى على الاكونت بتاعى  -->
+            <i class="fas fa-shopping-cart  fs-3 me-4 mt-1 text-primary icon_cart "></i>
+            <span class="position-absolute  badge rounded-pill bg-danger notification"></span>
+          
+            <div class="product_cart  ">   <!-- largediv -->
+              <!-- هنا هتظهر المنتجات اللى اتضافت للعربة  -->
+              <div >
+                <!-- <button class="btn btn-secondary me-2">+</button>
+                 <button class="btn btn-secondary">-</button> -->
+              </div>
+              <a href="productofcart.html" class="btn btn-outline-primary me-2">View Cart</a>
+            </div>
+            <a class="btn btn-outline-danger me-2 " href="#" role="button" id="logout">Log out</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <!-- search -->
+  <div class="container_search d-flex justify-content-between align-items-center flex-row col-6  mx-auto">
+    <select id="searchMode" class="form-select w-25 col-3">
+        <option value="name">Product Name</option>
+        <option value="category">Category</option>
+    </select>
+    <input type="search" name="search" id="search" placeholder="Search for products..." class="form-control  w-75  col-6">  
+  </div>
+    <!-- products -->
+  <div class="container bg-light mb-5 product_container ">
+    <div class="allproduct d-flex  flex-row align-items-center justify-content-around flex-wrap " id="products">
+
+      <!-- first card of product  عادى امسح الكود مش هيأثر -->
+      <!-- <div class="card mb-3 mt-5" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="images/pexels-jackie-3483270-5203696.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="card-title">Head Phone</h4>
+              <p class="card-text">This is a wider card </p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            <div class="product-action d-flex justify-content-between align-items-center px-3 pb-3 mt-4">
+              <button class="addtocart btn btn-primary ">Add To Cart</button>
+              <div class="icon"> <i class="fa-regular fa-heart fav " id="fav"></i> </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="card mb-3 mt-5" style="max-width: 540px; margin: auto;">                
+  <img src="" class="card-img-top img-fluid" alt="Product Image">
+  
+  <div class="card-body">
+    <h4 class="card-title">Matte Lipstick Set</h4>
+    <p class="card-text">A set of 5 long-lasting, smudge-proof matte lipsticks in versatile nude shades.</p>
+    <p class="card-text"><small class="text-muted">2 hours ago</small></p>
+  </div>
+  
+  <div class="product-action d-flex justify-content-between align-items-center px-3 pb-3">
+    <button class="addtocart btn btn-primary">Add To Cart</button>
+    <div class="icon"> 
+      <i class="fa-regular fa-heart fav" id="fav" style="font-size: 1.5rem; cursor: pointer;"></i> 
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+
+  <!-- <button id="themeToggle" class="btn btn-outline-warning">تبديل الوضع</button> -->
+
+  <script src="js/script.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  
+ <!-- <img src="images/pexels-eugenia-remark-5767088-31209317.jpg" alt=""> -->
+
+
+
+</body>
+
+</html>

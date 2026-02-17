@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+    <!-- register Form -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img src="images/pexels-karola-g2-6320.jpg" style="width: 50px; height: 50px; border-radius: 8px;">
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact us</a>
+                    </li>
+                </ul>
+
+
+                <a class="btn btn-outline-primary me-3" href="login.html" role="button">Login</a>
+                <a class="btn btn-primary " href="register.html" role="button">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container w-50 mt-5 mb-5 p-4 p-md-5 rounded-3 shadow-lg bg-light text-dark">
+        <div class="row">
+            <h2 class="text-center mb-3">Register Form</h2>
+            <hr>
+            <form action="">
+
+                <div class="row">
+                    <div class="mb-3 col-12">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username">
+                    </div>
+
+                </div>
+
+
+                <div class="mb-3 col-12">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="">
+                </div>
+
+                <div class="mb-3 col-12">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <button class="btn btn-primary" id="btn_register">Register</button>
+            </form>
+            <p class="mt-4">Have an account? <a href="login.html" class="fw-bold">Login</a></p>
+        </div>
+
+    </div>
+
+
+
+    <script src="js/register.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

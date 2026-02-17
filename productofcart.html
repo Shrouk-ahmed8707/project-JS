@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Document</title>
+</head>
+<style>
+    #nameofaccount {
+        /* display: none; */
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+
+    .icon {
+        font-size: 24px;
+        /* color: red; */
+        cursor: pointer;
+    }
+
+    .icon-cart i {
+        cursor: pointer;
+    }
+    /* .Favorite_Products{
+        margin-left: 70px;
+    } */
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <img src="images/Gemini_Generated_Image_7cnqp77cnqp77cnq.png" style="width: 50px; height: 50px; border-radius: 8px;">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact us</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav  mb-2 mb-lg-0 ">
+                    <a class="btn btn-outline-primary me-3 link" href="login.html" role="button">Login</a>
+                    <a class="btn btn-primary link" href="register.html" role="button">Register</a>
+                    <div class="icon-cart position-relative  rest_icons ">
+                        <a class="mt-0" id="nameofaccount" href="#" role="button"></a>
+                        <!-- المفروض يودينى على الاكونت بتاعى  -->
+                        <i class="fas fa-shopping-cart  fs-3 me-4 mt-1 text-primary icon_cart "></i>
+                        <span class="position-absolute  badge rounded-pill bg-danger notification"></span>
+
+                        <!-- <div class="product_cart">   largediv -->
+                        <!-- هنا هتظهر المنتجات اللى اتضافت للعربة  -->
+                        <!-- <div></div>
+              <a href="productofcart.html" class="btn btn-outline-primary me-2">View Cart</a>
+            </div> -->
+                        <a class="btn btn-outline-danger me-2 " href="#" role="button" id="logout">Log out</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home" style="margin-top: 100px;">
+
+        <div class="container  ">
+             <h2 class="mt-5 ">  <i class="fa-solid fa-cart-plus text-primary"></i> Cart Products </h2>
+            <div class="products row  ">
+                <!-- هنا هتظهر المنتجات اللى اتضافت للعربة  -->
+            </div>
+        </div>
+
+        
+    </section>
+    <p id="allprices" class="text-center fs-3 mt-5 "></p>
+    <hr>
+
+    <!-- Favorite Products -->
+   <div class="fav m-5">
+     <h2 class=" Favorite_Products  "> <i class="fa-regular fa-heart text-danger"></i> Favorite Products</h2>
+    <div class="fav_products row">
+    </div>
+   </div>
+
+    <script src="js/productofcart.js"></script>
+    <script src="js/shared.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
