@@ -19,7 +19,7 @@ if (getusername) {
   nameofaccount.innerHTML = getusername;
   nameofaccount.style.color = "black";
   nameofaccount.style.fontWeight = "bold";
-   nameofaccount.style.fontSize = "1.2rem";
+  nameofaccount.style.fontSize = "1.2rem";
   nameofaccount.style.textDecoration="none"
 }
 ///////////////////////////////////////////////////////
