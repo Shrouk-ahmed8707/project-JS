@@ -49,7 +49,7 @@
     display: none;
     position: absolute;
     width: 280px;
-    height: auto;
+  max-height: 600px; overflow-y: auto;  overflow-x: hidden; 
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 10px;
@@ -64,6 +64,11 @@
   #searchMode{
     margin-right: 20px;
   }
+  .product-cards:hover{
+    transition: transform 0.4s ease;
+    box-shadow: 1px 1px 3px 3px rgba(129, 129, 208, 0.703);
+  }
+
 </style>
 
 <body>
@@ -91,21 +96,20 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav  mb-2 mb-lg-0 mb-sm-5">
-          <a class="btn btn-outline-primary me-3 link" href="login.html" role="button">Login</a>
-          <a class="btn btn-primary link" href="register.html" role="button">Register</a>
+        <ul class="navbar-nav  mb-2 mb-lg-0 ">
+          <a class="btn btn-outline-primary me-3 link  w-100" href="login.html" role="button">Login</a>
+          <a class="btn btn-primary link w-100" href="register.html" role="button">Register</a>
           <div class="icon-cart position-relative  rest_icons ">
             <a class="mt-0" id="nameofaccount" href="#" role="button"></a> <!-- المفروض يودينى على الاكونت بتاعى  -->
             <i class="fas fa-shopping-cart  fs-3 me-4 mt-1 text-primary icon_cart "></i>
             <span class="position-absolute  badge rounded-pill bg-danger notification"></span>
-          
             <div class="product_cart  ">   <!-- largediv -->
               <!-- هنا هتظهر المنتجات اللى اتضافت للعربة  -->
               <div >
                 <!-- <button class="btn btn-secondary me-2">+</button>
                  <button class="btn btn-secondary">-</button> -->
               </div>
-              <a href="productofcart.html" class="btn btn-outline-primary me-2">View Cart</a>
+                 <a href="productofcart.html" class="btn btn-outline-primary me-2">View Cart</a>
             </div>
             <a class="btn btn-outline-danger me-2 " href="#" role="button" id="logout">Log out</a>
           </div>
@@ -113,7 +117,6 @@
       </div>
     </div>
   </nav>
-  
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
   <!-- search -->

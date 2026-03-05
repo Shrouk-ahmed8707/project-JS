@@ -19,6 +19,8 @@ if (getusername) {
   nameofaccount.innerHTML = getusername;
   nameofaccount.style.color = "black";
   nameofaccount.style.fontWeight = "bold";
+  nameofaccount.style.fontSize = "1.2rem";
+  nameofaccount.style.textDecoration="none"
 }
 
 // ""مشكلة بتظهر معايا على طول لما بنادى باسم ال class خليكى id احسن ""
@@ -34,7 +36,7 @@ var products = [
   { id: 6, name: "Professional Lip Definer Set",    price: 15 , descrption: "High-pigment, creamy pencils for perfectly outlined lips.  long-lasting formula", last_updated: "2024-01-04", image: "images/pexels-madalina-enache-1540051428-27462658.jpg" },
   { id: 7, name: "Single Lipstick -",    price:22 , descrption: "A highly pigmented matte lipstick that provides all-day wear with a luxury feel.", last_updated: "2 days ago", image: "images/pexels-peg1997-12503617.jpg" },
   { id: 8, name: "Essential Brush ",    price: 28 , descrption: "A curated collection of soft synthetic  blenders for seamless makeup application.", last_updated: "2024-01-04", image: "images/pexels-eugenia-remark-5767088-31209317.jpg" },
-    { id: 9, name: " Shadow Palette ",    price: 28 , descrption: "A versatile palette featuring vibrant  shimmer shades to create endless eye looks.", last_updated: "2024-01-04", image: "images/pexels-greta-hoffman-7675377.jpg" },
+  { id: 9, name: " Shadow Palette ",    price: 28 , descrption: "A versatile palette featuring vibrant  shimmer shades to create endless eye looks.", last_updated: "2024-01-04", image: "images/pexels-greta-hoffman-7675377.jpg" },
 
 
 
@@ -44,7 +46,7 @@ var products = [
 function displayProducts() {
   let y = products.map(itemofproduct => {
     return `
- <div class="card mb-3 mt-5" style="max-width: 350px; margin: auto;">                
+ <div class="card product-cards mb-3 mt-5" style="max-width: 350px; margin: auto;  ">                
   <img src="${itemofproduct.image}" class="card-img-top img-fluid" alt="${itemofproduct.name}" style="width: 350px; height:250px;">
   
   <div class="card-body">
@@ -66,6 +68,7 @@ function displayProducts() {
   allproducts.innerHTML = y;
 }
 displayProducts();
+
 
 /////////////////////////////////////////////////////////////////
 let addedproducts = [];
@@ -233,7 +236,7 @@ searchInput.addEventListener("input", () => {
   <div class="product-action d-flex justify-content-between align-items-center px-3 pb-3 mt-2">
     <button class="addtocart btn btn-primary" onclick="addtocart(${itemofproduct.id})">Add To Cart</button>
     <div class="icon"> 
-      <i class="fa-regular fa-heart" onclick="addtofav(${itemofproduct.id})" style="font-size: 1.5rem; cursor: pointer;"></i> 
+      <i class="fa-regular fa-heart" onclick="addtofav(event ,${itemofproduct.id})" style="font-size: 1.5rem; cursor: pointer;"></i> 
     </div>
   </div>
 </div>`;
@@ -250,6 +253,18 @@ let addedfav = localStorage.getItem("favproduct")
   ? JSON.parse(localStorage.getItem("favproduct"))
   : [];
 function addtofav(id) {
+  let icon = event.target;
+
+    // تبديل شكل القلب بين المفرغ والممتلئ
+    icon.classList.toggle('fa-solid');
+    icon.classList.toggle('fa-regular');
+
+    // تغيير اللون للأحمر إذا كان القلب ممتلئاً
+    if (icon.classList.contains('fa-solid')) {
+        icon.style.color = "red";
+      //  alert(`Product added to favorites`);
+    } 
+
   // 2. التحقق يحصل هنا (جوة الدالة) لما يضغط على الزرار
   if (getusername) {
     let favchoosen = products.find(item => item.id === id);
