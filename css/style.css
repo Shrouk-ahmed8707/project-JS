@@ -1,0 +1,448 @@
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* Global Variables for Premium Theme */
+:root {
+  --primary-color: #d4a373; /* Elegant warm tone */
+  --secondary-color: #faedcd; /* Soft background */
+  --accent-color: #e63946; /* Heart active color */
+  --text-dark: #333333;
+  --text-light: #666666;
+  --bg-light: #fefcfb;
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6, .card-title, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Typography & Colors - Navbar & Links */
+.navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--text-dark) !important;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  padding: 8px 20px;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #c49261;
+  border-color: #c49261;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 25px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+a.link {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Username */
+#nameofaccount {
+  margin-right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary-color) !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Search Bar Styling */
+.container_search {
+  margin-top: 120px;
+  margin-bottom: 40px;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+#searchMode {
+  margin-right: 20px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-light);
+}
+
+#search {
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+#search:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(212, 163, 115, 0.25);
+  outline: none;
+}
+
+/* Product Container & Cards */
+.product_container {
+  margin-top: 20px;
+  background-color: transparent !important;
+}
+
+/* Targeting generated product cards */
+.product-cards, .card {
+  border: none;
+  border-radius: 20px;
+  background: var(--card-bg);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+}
+
+.product-cards:hover, .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-top {
+  border-bottom: 1px solid #f0f0f0;
+  object-fit: cover; /* Prevents distortion */
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.03);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Icons & Heart Interactive Effect */
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.icon .fav, .icon .fa-heart {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+  color: #ccc;
+}
+
+.icon .fav:hover, .icon .fa-heart:hover {
+  transform: scale(1.15);
+  color: #ffb3b3;
+}
+
+/* This targets the filled heart specifically to ensure it overrides when solid */
+.icon .fa-solid.fa-heart, .icon .fa-solid.fav {
+  color: var(--accent-color) !important;
+  transform: scale(1.1);
+}
+
+/* Cart Menu Styling */
+.icon-cart i {
+  cursor: pointer;
+  color: var(--text-dark) !important;
+  transition: color 0.3s ease;
+}
+
+.icon-cart i:hover {
+  color: var(--primary-color) !important;
+}
+
+.notification {
+  top: -8px;
+  left: 90px;
+  display: none;
+  background-color: var(--primary-color) !important;
+  color: white;
+  border: 2px solid white;
+}
+
+.rest_icons {
+  display: none;
+  align-items: center;
+}
+
+/* Cart dropdown panel */
+.product_cart {
+  display: none;
+  position: absolute;
+  width: 340px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  top: 50px;
+  right: 60px;
+  z-index: 1000;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Slim Scrollbar for Cart */
+.product_cart::-webkit-scrollbar {
+  width: 6px;
+}
+
+.product_cart::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 10px;
+}
+
+.product_cart::-webkit-scrollbar-thumb {
+  background: rgba(212, 163, 115, 0.5); /* Primary color slightly transparent */
+  border-radius: 10px;
+}
+
+.product_cart::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 163, 115, 0.8);
+}
+
+/* Cart inner items */
+.product_cart .row-col-6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 12px 5px !important;
+  background-color: transparent !important;
+  margin-bottom: 0 !important;
+}
+
+.product_cart .row-col-6 p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.product_cart .row-col-6 strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary-color) !important;
+  margin-top: 4px;
+}
+
+.product_cart .btn-secondary {
+  background-color: #f8f9fa;
+  color: var(--text-dark);
+  border: 1px solid #e9ecef;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.product_cart .btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.product_cart .number {
+  font-weight: 600;
+  width: 20px;
+  text-align: center;
+}
+
+/* View Cart button */
+.product_cart .btn-outline-primary {
+  width: 100%;
+  margin-top: 15px;
+}
+
+#logout {
+  border-radius: 25px;
+}
+
+/* Image rounding for navbar */
+.navbar img {
+  border-radius: 50% !important;
+  border: 2px solid var(--primary-color);
+}
+
+/* Product of Cart Page Specifics */
+.home .card, .fav .card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
+}
+
+.home .card:hover, .fav .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.home .btn-danger {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 25px;
+  padding: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.home .btn-danger:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+}
+
+.home .btn-secondary {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  font-weight: bold;
+}
+
+.home .btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Auth Pages Styling */
+.auth-container {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.auth-form-wrapper {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(212, 163, 115, 0.2);
+}
+
+.auth-form-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form-content h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.auth-input {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  background-color: var(--bg-light);
+}
+
+.auth-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+  background-color: #fff;
+  outline: none;
+}
+
+.auth-btn {
+  border-radius: 25px;
+  padding: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
+}
+
+.auth-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  min-height: 500px;
+}
+
+.auth-link {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}

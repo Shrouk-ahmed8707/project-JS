@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<style>
-    a {
-        text-decoration: none;
-    }
-</style>
 
 <body>
 
@@ -41,35 +37,35 @@
         </div>
     </nav>
 
-    <div class="container mt-5 mb-5 p-4 p-md-5 rounded-3 shadow-lg bg-light text-dark w-50 sm-w-100">
-        <div class="row">
-            <h2 class="text-center mb-3">Register Form</h2>
-            <hr>
-            <form action="">
-
-                <div class="row">
-                    <div class="mb-3 col-12">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username">
+    <div class="auth-container container">
+        <div class="row auth-form-wrapper w-100 mx-auto flex-row-reverse" style="max-width: 900px;">
+            <div class="col-lg-6 col-12 auth-form-content">
+                <h2 class="text-center">Create Account</h2>
+                <p class="text-center text-muted mb-4">Join our premium beauty store</p>
+                <form action="">
+                    <div class="mb-3">
+                        <label for="username" class="form-label fw-bold">Username</label>
+                        <input type="text" class="form-control auth-input" id="username" placeholder="Choose a username">
                     </div>
 
-                </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label fw-bold">Email</label>
+                        <input type="email" class="form-control auth-input" id="Email" placeholder="Enter your email">
+                    </div>
 
-
-                <div class="mb-3 col-12">
-                    <label for="Email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="Email" placeholder="">
-                </div>
-
-                <div class="mb-3 col-12">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password">
-                </div>
-                <button class="btn btn-primary" id="btn_register">Register</button>
-            </form>
-            <p class="mt-4">Have an account? <a href="login.html" class="fw-bold">Login</a></p>
+                    <div class="mb-4">
+                        <label for="password" class="form-label fw-bold">Password</label>
+                        <input type="password" class="form-control auth-input" id="password" placeholder="Create a strong password">
+                    </div>
+                    
+                    <button class="btn btn-primary w-100 auth-btn" id="btn_register">Register</button>
+                    <p class="mt-4 text-center text-muted">Already have an account? <a href="login.html" class="auth-link">Login</a></p>
+                </form>
+            </div>
+            <div class="col-lg-6 col-12 p-0 d-none d-lg-block">
+                <img src="images/Gemini_Generated_Image_7cnqp77cnqp77cnq.png" class="auth-image" alt="Register Image">
+            </div>
         </div>
-
     </div>
 
 

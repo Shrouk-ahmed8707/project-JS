@@ -77,14 +77,17 @@ if (favItems) {
 // دالة رسم المنتجات المفضلة
 function draw_fav_products(products) {
 
-  let y = products.map(itemofproduct => {
+  // نتأكد إننا بنرسم العناصر السليمة بس لو كان في بيانات فاسدة متخزنة قبل كده
+  let validProducts = products.filter(item => item !== null && item !== undefined);
+
+  let y = validProducts.map(itemofproduct => {
     return `
     <div class="col-md-3 mt-3 ">
         <div class="card h-100">
             <img src="${itemofproduct.image}" class="card-img-top" style="height:150px;">
             <div class="card-body d-flex  justify-content-between align-items-center my-2">
                 <h5>${itemofproduct.name}</h5>
-               <i  class="fa-solid fa-heart fs-4" style="color: rgba(230, 18, 18, 1.00); cursor: pointer;" onclick="remove_from_favourate(${itemofproduct.id})" style="cursor: pointer;"></i> 
+               <i class="fa-solid fa-heart fs-4" style="color: rgba(230, 18, 18, 1.00); cursor: pointer;" onclick="remove_from_favourate(${itemofproduct.id})" style="cursor: pointer;"></i> 
               
             </div>
         </div>
@@ -96,19 +99,20 @@ function draw_fav_products(products) {
 
 //////////////remove product from carts/////////////
 function removefromcart(id) {
+  // Update the global productsincart variable instead of reading a stale array
+  productsincart = productsincart.filter(item => item.id !== Number(id));
+  
+  // Save updated array back to localStorage
+  localStorage.setItem("productincart", JSON.stringify(productsincart));
 
-  addedproducts = localStorage.getItem("productincart")
-    ? JSON.parse(localStorage.getItem("productincart"))
-    : [];
-
-  let filteredproduct = addedproducts.filter(item => item.id !== Number(id))
-  addedproducts = filteredproduct;
-  localStorage.setItem("productincart", JSON.stringify(filteredproduct));
-
-  drawproductsincart(filteredproduct)
-  //نقلل ال counter 
+  // Refresh the UI
+  drawproductsincart(productsincart);
+  
+  // Update the counter 
   let cart_notification = document.querySelector(".notification");
-  cart_notification.innerHTML = filteredfav.length
+  if (cart_notification) {
+    cart_notification.innerHTML = productsincart.length;
+  }
 }
 
 //////////////remove product from fav////////////////

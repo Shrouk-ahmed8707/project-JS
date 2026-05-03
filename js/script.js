@@ -1,4 +1,4 @@
-﻿
+
 let nameofaccount = document.getElementById("nameofaccount");
 
 //الاسم اللى هكتبه على اول الصفحة  اسم ال ""useraccount""
@@ -59,7 +59,7 @@ function displayProducts() {
   <div class="product-action d-flex justify-content-between align-items-center px-3 pb-3 mt-2">
     <button class="addtocart btn btn-primary" onclick="addtocart(${itemofproduct.id})">Add To Cart</button>
     <div class="icon"> 
-      <i class="fa-regular fa-heart" onclick="addtofav(${itemofproduct.id})" style="font-size: 1.5rem; cursor: pointer;"></i> 
+      <i class="fa-regular fa-heart" onclick="addtofav(this, ${itemofproduct.id})" style="font-size: 1.5rem; cursor: pointer;"></i> 
     </div>
   </div>
 </div>`
@@ -236,7 +236,7 @@ searchInput.addEventListener("input", () => {
   <div class="product-action d-flex justify-content-between align-items-center px-3 pb-3 mt-2">
     <button class="addtocart btn btn-primary" onclick="addtocart(${itemofproduct.id})">Add To Cart</button>
     <div class="icon"> 
-      <i class="fa-regular fa-heart" onclick="addtofav(event ,${itemofproduct.id})" style="font-size: 1.5rem; cursor: pointer;"></i> 
+      <i class="fa-regular fa-heart" onclick="addtofav(this, ${itemofproduct.id})" style="font-size: 1.5rem; cursor: pointer;"></i> 
     </div>
   </div>
 </div>`;
@@ -249,11 +249,9 @@ searchInput.addEventListener("input", () => {
 
 
 // let fav=document.querySelector(".fav")
-let addedfav = localStorage.getItem("favproduct")
-  ? JSON.parse(localStorage.getItem("favproduct"))
-  : [];
-function addtofav(id) {
-  let icon = event.target;
+let rawFav = localStorage.getItem("favproduct") ? JSON.parse(localStorage.getItem("favproduct")) : [];
+let addedfav = Array.isArray(rawFav) ? rawFav.filter(item => item !== null && item !== undefined) : [];
+function addtofav(icon, id) {
 
     // تبديل شكل القلب بين المفرغ والممتلئ
     icon.classList.toggle('fa-solid');
@@ -262,22 +260,28 @@ function addtofav(id) {
     // تغيير اللون للأحمر إذا كان القلب ممتلئاً
     if (icon.classList.contains('fa-solid')) {
         icon.style.color = "red";
-      //  alert(`Product added to favorites`);
-    } 
+    } else {
+        icon.style.color = "";
+    }
 
   // 2. التحقق يحصل هنا (جوة الدالة) لما يضغط على الزرار
   if (getusername) {
-    let favchoosen = products.find(item => item.id === id);
-    // <i class="fa-solid fa-heart"></i>
+    let numericId = Number(id);
+    let favchoosen = products.find(item => item.id === numericId);
     
-    let isExist = addedfav.some(item => item.id === id);
+    let isExist = addedfav.some(item => item.id === numericId);
 
     if (isExist) {
+      // إزالة المنتج من المفضلة
+      addedfav = addedfav.filter(item => item.id !== numericId);
+      localStorage.setItem("favproduct", JSON.stringify(addedfav));
       return;
     }
 
-    addedfav = [...addedfav, favchoosen];
-    localStorage.setItem("favproduct", JSON.stringify(addedfav));
+    if (favchoosen) {
+      addedfav = [...addedfav, favchoosen];
+      localStorage.setItem("favproduct", JSON.stringify(addedfav));
+    }
    
   } else {
     // لو مش مسجل وداس على الزرار، ابعته يسجل
